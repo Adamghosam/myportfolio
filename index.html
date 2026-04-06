@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -374,8 +374,8 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <nav class="container">
+    <!-- <header> -->
+        <!-- <nav class="container">
             <div class="logo">Portfolio</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -384,21 +384,21 @@
                 <li><a href="#contact">Contact</a></li>
                 <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button></li>
             </ul>
-        </nav>
-    </header>
+        </nav> -->
+    <!-- </header> -->
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- <section id="home" class="hero">
         <div class="container">
             <div class="hero-image">👤</div>
             <h1>Halo, Saya Adam Ghosam</h1>
             <p>Backend Developer | Mobile Developer | DevOps Engineer</p>
             <a href="#portfolio" class="cta-button">Lihat Portfolio Saya</a>
         </div>
-    </section>
+    </section> -->
 
     <!-- Skills Section -->
-    <section id="skills">
+    <!-- <section id="skills">
         <div class="container">
             <h2 class="section-title">Keahlian Saya</h2>
             <div class="skills-grid">
@@ -424,10 +424,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Portfolio Section -->
-    <section id="portfolio">
+    <!-- <section id="portfolio">
         <div class="container">
             <h2 class="section-title">Portfolio Saya</h2>
             <div class="portfolio-grid">
@@ -505,10 +505,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Hubungi Saya</h2>
             <div class="contact-content">
@@ -533,16 +533,16 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
-    <footer>
+    <!-- <footer>
         <div class="container">
             <p>&copy; 2024 Adam Ghosam. Dibuat dengan ❤️</p>
         </div>
-    </footer>
+    </footer> -->
 
-    <script>
+    <!-- <script>
         // Theme Toggle
         function toggleTheme() {
             const html = document.documentElement;
@@ -569,6 +569,425 @@
                 }
             });
         });
+    </script>
+</body> -->
+<!-- </html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Adam Ghosam</title>
+    <style>
+        /* Modern Reset & Root Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Palette Biru Modern */
+            --primary: #2563eb;        /* Royal Blue */
+            --primary-dark: #1e40af;   /* Deep Blue */
+            --accent: #38bdf8;         /* Sky Blue */
+            --bg-primary: #f8fafc;     /* Light Grayish Blue */
+            --bg-secondary: #f1f5f9;   /* Softer Blue Gray */
+            --text-primary: #1e293b;   /* Dark Slate */
+            --text-secondary: #64748b; /* Muted Slate */
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --shadow: rgba(37, 99, 235, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary: #60a5fa;
+            --primary-dark: #2563eb;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --card-bg: #1e293b;
+            --border: #334155;
+            --shadow: rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar Refined */
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        [data-theme="dark"] header {
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Theme Toggle Switch */
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            width: 48px;
+            height: 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .theme-toggle::before {
+            content: '☀️';
+            position: absolute;
+            font-size: 12px;
+            top: 3px;
+            left: 4px;
+            transition: 0.3s;
+        }
+
+        [data-theme="dark"] .theme-toggle::before {
+            content: '🌙';
+            transform: translateX(22px);
+        }
+
+        /* Hero Section - Blue Gradient */
+        .hero {
+            padding: 8rem 0 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent);
+        }
+
+        .hero-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 30%;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            box-shadow: 0 20px 40px var(--shadow);
+            transform: rotate(-5deg);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px var(--shadow);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px var(--shadow);
+        }
+
+        /* Sections */
+        section { padding: 6rem 0; }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 4rem;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        /* Skill Cards Modernized */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px var(--shadow);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        /* Portfolio Items Refined */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .portfolio-content { padding: 2rem; }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 1.2rem;
+        }
+
+        .tag {
+            background: var(--bg-secondary);
+            color: var(--primary);
+            padding: 0.4rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-secondary);
+            border-radius: 40px;
+            margin-bottom: 4rem;
+        }
+
+        .contact-link {
+            background: var(--card-bg);
+            padding: 1.2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Mobile menu simplified */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">AG.<span>dev</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#portfolio">Project</a></li>
+                <li><a href="#contact">Kontak</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-image">👨‍💻</div>
+            <h1>Adam Ghosam</h1>
+            <p>Membangun solusi digital yang efisien melalui Backend Engineering, Mobile Development, dan arsitektur DevOps yang solid.</p>
+            <a href="#portfolio" class="cta-button">Eksplorasi Project</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Tech <span>Stack</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <span class="skill-icon">🚀</span>
+                    <h3>Django Expert</h3>
+                    <p>Membangun core sistem yang scalable menggunakan Python dan Django Framework.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">☁️</span>
+                    <h3>DevOps</h3>
+                    <p>Manajemen server Linux, Docker Swarm, dan otomatisasi deployment.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">📱</span>
+                    <h3>Flutter</h3>
+                    <p>Pengembangan aplikasi mobile multi-platform dengan Dart.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Selected <span>Work</span></h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📦</div>
+                    <div class="portfolio-content">
+                        <h3>E-Commerce Core API</h3>
+                        <p>Sistem backend kompleks dengan integrasi payment gateway dan manajemen stok real-time.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🛠️</div>
+                    <div class="portfolio-content">
+                        <h3>Docker Cluster Pipo</h3>
+                        <p>Konfigurasi 5-node Docker Swarm menggunakan hardware Pipo X9 untuk server mandiri.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Docker</span>
+                            <span class="tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container contact">
+        <div class="contact-content">
+            <h2 class="section-title">Mari <span>Berdiskusi</span></h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Punya ide project atau sekadar ingin bertegur sapa? Pintu saya selalu terbuka.</p>
+            <div class="contact-links" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="mailto:adamghosam@gmail.com" class="contact-link">📧 Email</a>
+                <a href="https://github.com/adamghosam" class="contact-link" target="_blank">💻 GitHub</a>
+                <a href="https://linkedin.com/in/adam-ghosam-916486205" class="contact-link" target="_blank">💼 LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Adam Ghosam. Designed for Excellence.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
     </script>
 </body>
 </html>
